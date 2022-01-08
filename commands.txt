@@ -1,0 +1,9 @@
+python manage.py check --deploy
+docker-compose exec web python manage.py check --deploy
+Local vs. Production
+- ENVIRONMENT=development
+DEBUG=0
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
+if ENVIRONMENT == 'production':
+SECURE_BROWSER_XSS_FILTER = True
+Admin Hardening
